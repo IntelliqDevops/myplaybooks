@@ -1,0 +1,23 @@
+---
+- name: Create a user and clone a remote git repo into the users home dir
+  hosts: all
+  tasks:
+    - name: Create user
+      user:
+        name: Shankar
+        password: intelliqit
+        home: /tmp/Shankar
+        uid: 8989
+        comment: "a super user"
+        shell: /bin/bash
+    - name: Clone a remote git repo
+      git:
+        repo: https://github.com/IntelliqDevops/maven.git
+        dest: /tmp/Shankar/mygit
+    - name: Delete pom.xml file from the clone repo
+      file:
+        name: /tmp/Shankar/mygit/pom.xml
+        state: absent
+
+...
+

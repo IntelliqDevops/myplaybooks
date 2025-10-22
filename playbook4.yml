@@ -1,0 +1,11 @@
+---
+- name: UnInstall maven on all the servers
+  hosts: all
+  tasks:
+    - name: Maven uninstallation
+      apt:
+        name: maven
+        state: absent
+        update_cache: yes
+
+...

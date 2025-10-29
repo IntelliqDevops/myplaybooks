@@ -1,0 +1,16 @@
+---
+- name: Implementing when conditions
+  hosts: all
+  vars:
+    a: 20
+  tasks:
+    - name: CReate a user
+      user:
+        name: Hari
+        password: intelliqit
+        home: /home/Hari
+        uid: 9090
+        comment: "A normal user"
+        shell: /bin/bash
+      when: a == 10
+

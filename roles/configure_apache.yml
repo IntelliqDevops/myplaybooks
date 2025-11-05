@@ -1,0 +1,6 @@
+---
+- name: Configure apahce2 using roles
+  hosts: all
+  roles:
+    - apache
+...
